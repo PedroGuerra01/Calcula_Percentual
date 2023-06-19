@@ -1,3 +1,30 @@
+def calcular_percentual_faturamento():
+
+    faturamento_cidades = {}
+
+
+    valor_total = 1000000
+
+
+    cidades = ["SP", "RJ", "MG", "RS", "ES"]
+    for cidade in cidades:
+        faturamento = float(input("Qual foi o valor do faturamento de {}? ".format(cidade)))
+        faturamento_cidades[cidade] = faturamento
+
+
+    percentuais = {}
+    for cidade, faturamento in faturamento_cidades.items():
+        percentual = (faturamento / valor_total) * 100
+        percentuais[cidade] = percentual
+
+
+    for cidade, percentual in percentuais.items():
+        print("O faturamento de {} representa {:.2f}% do valor total.".format(cidade, percentual))
+
+
+calcular_percentual_faturamento()
+
+Resultado
 Qual foi o valor do faturamento de SP? 
 655
 Qual foi o valor do faturamento de RJ? 
