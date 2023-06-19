@@ -1,3 +1,33 @@
+def calcular_percentual_representacao(faturamento_estados):
+    total = sum(faturamento_estados.values())  # Calcula o valor total mensal da distribuidora
+
+    percentuais = {}
+    for estado, faturamento in faturamento_estados.items():
+        percentual = (faturamento / total) * 100  # Calcula o percentual de representação
+        percentuais[estado] = percentual
+
+    return percentuais
+
+
+# Dicionário com o faturamento mensal por estado
+faturamento_estados = {
+    "SP": 67836.43,
+    "RJ": 36678.66,
+    "MG": 29229.88,
+    "ES": 27165.48,
+    "Outros": 19849.53
+}
+
+# Chama a função para calcular os percentuais de representação
+percentuais = calcular_percentual_representacao(faturamento_estados)
+
+# Imprime os resultados
+for estado, percentual in percentuais.items():
+    print(f"{estado}: {percentual:.2f}%")
+
+
+Resultado:
+
 SP: 37.53%
 RJ: 20.29%
 MG: 16.17%
